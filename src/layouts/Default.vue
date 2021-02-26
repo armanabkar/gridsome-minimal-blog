@@ -57,7 +57,7 @@ body {
 }
 
 .layout {
-  max-width: 760px;
+  max-width: 800px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -104,6 +104,10 @@ pre code {
   padding: 0;
   background-color: inherit;
   font-size: 1rem !important;
+}
+
+img {
+  max-width: 80%;
 }
 
 ::-webkit-scrollbar {
