@@ -48,6 +48,16 @@ export default {
   font-family: "Stylish";
 }
 
+@media only screen and (max-width: 992px) {
+  .post-title {
+    margin: -2rem auto -1rem auto;
+  }
+  .post-title h1 {
+    line-height: 1em;
+    margin-bottom: 0;
+  }
+}
+
 .post-date {
   font-size: 16px;
   font-weight: 400;
