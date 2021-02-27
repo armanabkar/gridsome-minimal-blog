@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>SOLID Principles - Gridsome Blog</title><meta name="gridsome:hash" content="fc741da39535b8029188d5c700a38653f203d118"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.23"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A simple blog designed with Gridsome"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/gridsome-minimal-blog/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/gridsome-minimal-blog/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/gridsome-minimal-blog/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/gridsome-minimal-blog/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/gridsome-minimal-blog/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/gridsome-minimal-blog/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/gridsome-minimal-blog/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/gridsome-minimal-blog/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Stylish&amp;display=swap"><link rel="preload" href="/gridsome-minimal-blog/assets/css/0.styles.baf2d044.css" as="style"><link rel="preload" href="/gridsome-minimal-blog/assets/js/app.9c97b313.js" as="script"><link rel="preload" href="/gridsome-minimal-blog/assets/js/page--src--templates--post-vue.c309d0ab.js" as="script"><link rel="prefetch" href="/gridsome-minimal-blog/assets/js/page--node-modules--gridsome--app--pages--404-vue.494dd41d.js"><link rel="prefetch" href="/gridsome-minimal-blog/assets/js/page--src--pages--index-vue.b3bb4eda.js"><link rel="stylesheet" href="/gridsome-minimal-blog/assets/css/0.styles.baf2d044.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute("data-theme", newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem("theme");
+        } catch (err) {}
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem("theme", newTheme);
+          } catch (err) {}
+        };
+
+        var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? "dark" : "light");
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? "dark" : "light"));
+      })();
+    </script>
+
+    <main role="main" data-server-rendered="true" id="app" class="layout"><div><header class="layout-header"><nav class="nav"><a href="/gridsome-minimal-blog/" class="link active">
+        ← Go Back</a><a role="button" aria-label="Toggle sepia" title="Toggle sepia" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></a></nav></header></div><div class="post-title"><h1>SOLID Principles</h1><p class="post-date">
+      14 April 2021 | 11 min read
+    </p></div><div class="post-content"><p><h2 align="center">
+  <img src="https://www.freecodecamp.org/news/content/images/size/w2000/2020/08/solid.png" width="600px" />
+  <br>
+</h2>
+<p>The SOLID Principles are five principles of Object-Oriented class design. They are a set of rules and best practices to follow while designing a class structure.</p>
+<p>These five principles help us understand the need for certain design patterns and software architecture in general. So I believe that it is a topic that every developer should learn.</p>
+<p>This article will teach you everything you need to know to apply SOLID principles to your projects.</p>
+<p>We will start by taking a look into the history of this term. Then we are going to get into the nitty-gritty details – the why's and how's of each principle – by creating a class design and improving it step by step.</p>
+<p>So grab a cup of coffee or tea and let's jump right in!</p>
+<h2 id="background"><a href="#background" aria-hidden="true"><span class="icon icon-link"></span></a>Background</h2>
+<p>The SOLID principles were first introduced by the famous Computer Scientist Robert J. Martin (a.k.a Uncle Bob) in his <a href="https://fi.ort.edu.uy/innovaportal/file/2032/1/design_principles.pdf" target="_blank" rel="nofollow noopener noreferrer">paper</a> in 2000. But the SOLID acronym was introduced later by Michael Feathers.</p>
+<p>Uncle Bob is also the author of bestselling books Clean Code and Clean Architecture, and is one of the participants of the <a href="https://agilemanifesto.org/history.html" target="_blank" rel="nofollow noopener noreferrer">"Agile Alliance"</a>.</p>
+<p>Therefore, it is not a surprise that all these concepts of clean coding, object-oriented architecture, and design patterns are somehow connected and complementary to each other.</p>
+<p>They all serve the same purpose:</p>
+<blockquote>
+<p>"To create understandable, readable, and testable code that many developers can collaboratively work on."</p>
+</blockquote>
+<p>Let's look at each principle one by one. Following the SOLID acronym, they are:</p>
+<ul>
+<li>The Single Responsibility Principle</li>
+<li>The Open-Closed Principle</li>
+<li>The Liskov Substitution Principle</li>
+<li>The Interface Segregation Principle</li>
+<li>The Dependency Inversion Principle</li>
+</ul>
+<h2 id="the-single-responsibility-principle"><a href="#the-single-responsibility-principle" aria-hidden="true"><span class="icon icon-link"></span></a>The Single Responsibility Principle</h2>
+<p>The Single Responsibility Principle states that a class should do one thing and therefore it should have only a single reason to change.</p>
+<p>To state this principle more technically: Only one potential change (database logic, logging logic, and so on.) in the software’s specification should be able to affect the specification of the class.</p>
+<p>This means that if a class is a data container, like a Book class or a Student class, and it has some fields regarding that entity, it should change only when we change the data model.</p>
+<p>Following the Single Responsibility Principle is important. First of all, because many different teams can work on the same project and edit the same class for different reasons, this could lead to incompatible modules.</p>
+<p>Second, it makes version control easier. For example, say we have a persistence class that handles database operations, and we see a change in that file in the GitHub commits. By following the SRP, we will know that it is related to storage or database-related stuff.</p>
+<p>Merge conflicts are another example. They appear when different teams change the same file. But if the SRP is followed, fewer conflicts will appear – files will have a single reason to change, and conflicts that do exist will be easier to resolve.</p>
+<h3 id="common-pitfalls-and-anti-patterns"><a href="#common-pitfalls-and-anti-patterns" aria-hidden="true"><span class="icon icon-link"></span></a>Common Pitfalls and Anti-patterns</h3>
+<p>In this section we will look at some common mistakes that violate the Single Responsibility Principle. Then we will talk about some ways to fix them.</p>
+<p>We will look at the code for a simple bookstore invoice program as an example. Let's start by defining a book class to use in our invoice.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Book</span> <span class="token punctuation">{</span>
+	<span class="token class-name">String</span> name<span class="token punctuation">;</span>
+	<span class="token class-name">String</span> authorName<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> year<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> price<span class="token punctuation">;</span>
+	<span class="token class-name">String</span> isbn<span class="token punctuation">;</span>
+
+	<span class="token keyword">public</span> <span class="token class-name">Book</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token class-name">String</span> authorName<span class="token punctuation">,</span> <span class="token keyword">int</span> year<span class="token punctuation">,</span> <span class="token keyword">int</span> price<span class="token punctuation">,</span> <span class="token class-name">String</span> isbn<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>authorName <span class="token operator">=</span> authorName<span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>year <span class="token operator">=</span> year<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price<span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>isbn <span class="token operator">=</span> isbn<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This is a simple book class with some fields. Nothing fancy. I am not making fields private so that we don't need to deal with getters and setters and can focus on the logic instead.</p>
+<p>Now let's create the invoice class which will contain the logic for creating the invoice and calculating the total price. For now, assume that our bookstore only sells books and nothing else.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Invoice</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">private</span> <span class="token class-name">Book</span> book<span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token keyword">int</span> quantity<span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token keyword">double</span> discountRate<span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token keyword">double</span> taxRate<span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token keyword">double</span> total<span class="token punctuation">;</span>
+
+	<span class="token keyword">public</span> <span class="token class-name">Invoice</span><span class="token punctuation">(</span><span class="token class-name">Book</span> book<span class="token punctuation">,</span> <span class="token keyword">int</span> quantity<span class="token punctuation">,</span> <span class="token keyword">double</span> discountRate<span class="token punctuation">,</span> <span class="token keyword">double</span> taxRate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>book <span class="token operator">=</span> book<span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>quantity <span class="token operator">=</span> quantity<span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>discountRate <span class="token operator">=</span> discountRate<span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>taxRate <span class="token operator">=</span> taxRate<span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>total <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">calculateTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">calculateTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	        <span class="token keyword">double</span> price <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>book<span class="token punctuation">.</span>price <span class="token operator">-</span> book<span class="token punctuation">.</span>price <span class="token operator">*</span> discountRate<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>quantity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">double</span> priceWithTaxes <span class="token operator">=</span> price <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> taxRate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">return</span> priceWithTaxes<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printInvoice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>quantity <span class="token operator">+</span> <span class="token string">"x "</span> <span class="token operator">+</span> book<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span>          book<span class="token punctuation">.</span>price <span class="token operator">+</span> <span class="token string">"$"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Discount Rate: "</span> <span class="token operator">+</span> discountRate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Tax Rate: "</span> <span class="token operator">+</span> taxRate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Total: "</span> <span class="token operator">+</span> total<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">saveToFile</span><span class="token punctuation">(</span><span class="token class-name">String</span> filename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// Creates a file with given name and writes the invoice</span>
+	<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
+<p>Here is our invoice class. It also contains some fields about invoicing and 3 methods:</p>
+<ul>
+<li>calculateTotal method, which calculates the total price,</li>
+<li>printInvoice method, that should print the invoice to console, and</li>
+<li>saveToFile method, responsible for writing the invoice to a file.</li>
+</ul>
+<p>You should give yourself a second to think about what is wrong with this class design before reading the next paragraph.</p>
+<p>Ok so what's going on here? Our class violates the Single Responsibility Principle in multiple ways.</p>
+<p>The first violation is the printInvoice method, which contains our printing logic. The SRP states that our class should only have a single reason to change, and that reason should be a change in the invoice calculation for our class.</p>
+<p>But in this architecture, if we wanted to change the printing format, we would need to change the class. This is why we should not have printing logic mixed with business logic in the same class.</p>
+<p>There is another method that violates the SRP in our class: the saveToFile method. It is also an extremely common mistake to mix persistence logic with business logic.</p>
+<p>Don't just think in terms of writing to a file – it could be saving to a database, making an API call, or other stuff related to persistence.</p>
+<p>So how can we fix this print function, you may ask.</p>
+<p>We can create new classes for our printing and persistence logic so we will no longer need to modify the invoice class for those purposes.</p>
+<p>We create 2 classes, InvoicePrinter and InvoicePersistence, and move the methods.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InvoicePrinter</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">Invoice</span> invoice<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">InvoicePrinter</span><span class="token punctuation">(</span><span class="token class-name">Invoice</span> invoice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>invoice <span class="token operator">=</span> invoice<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>invoice<span class="token punctuation">.</span>quantity <span class="token operator">+</span> <span class="token string">"x "</span> <span class="token operator">+</span> invoice<span class="token punctuation">.</span>book<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> invoice<span class="token punctuation">.</span>book<span class="token punctuation">.</span>price <span class="token operator">+</span> <span class="token string">" $"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Discount Rate: "</span> <span class="token operator">+</span> invoice<span class="token punctuation">.</span>discountRate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Tax Rate: "</span> <span class="token operator">+</span> invoice<span class="token punctuation">.</span>taxRate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Total: "</span> <span class="token operator">+</span> invoice<span class="token punctuation">.</span>total <span class="token operator">+</span> <span class="token string">" $"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InvoicePersistence</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Invoice</span> invoice<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">InvoicePersistence</span><span class="token punctuation">(</span><span class="token class-name">Invoice</span> invoice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>invoice <span class="token operator">=</span> invoice<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">saveToFile</span><span class="token punctuation">(</span><span class="token class-name">String</span> filename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Creates a file with given name and writes the invoice</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Now our class structure obeys the Single Responsibility Principle and every class is responsible for one aspect of our application. Great!</p>
+<h2 id="open-closed-principle"><a href="#open-closed-principle" aria-hidden="true"><span class="icon icon-link"></span></a>Open-Closed Principle</h2>
+<p>The Open-Closed Principle requires that classes should be open for extension and closed to modification.</p>
+<p>Modification means changing the code of an existing class, and extension means adding new functionality.</p>
+<p>So what this principle wants to say is: We should be able to add new functionality without touching the existing code for the class. This is because whenever we modify the existing code, we are taking the risk of creating potential bugs. So we should avoid touching the tested and reliable (mostly) production code if possible.</p>
+<p>But how are we going to add new functionality without touching the class, you may ask. It is usually done with the help of interfaces and abstract classes.</p>
+<p>Now that we have covered the basics of the principle, let's apply it to our Invoice application.</p>
+<p>Let's say our boss came to us and said that they want invoices to be saved to a database so that we can search them easily. We think okay, this is easy peasy boss, just give me a second!</p>
+<p>We create the database, connect to it, and we add a save method to our InvoicePersistence class:</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InvoicePersistence</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Invoice</span> invoice<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">InvoicePersistence</span><span class="token punctuation">(</span><span class="token class-name">Invoice</span> invoice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>invoice <span class="token operator">=</span> invoice<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">saveToFile</span><span class="token punctuation">(</span><span class="token class-name">String</span> filename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Creates a file with given name and writes the invoice</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">saveToDatabase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Saves the invoice to database</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Unfortunately we, as the lazy developer for the book store, did not design the classes to be easily extendable in the future. So in order to add this feature, we have modified the InvoicePersistence class.</p>
+<p>If our class design obeyed the Open-Closed principle we would not need to change this class.</p>
+<p>So, as the lazy but clever developer for the book store, we see the design problem and decide to refactor the code to obey the principle.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">InvoicePersistence</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token class-name">Invoice</span> invoice<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We change the type of InvoicePersistence to Interface and add a save method. Each persistence class will implement this save method.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DatabasePersistence</span> <span class="token keyword">implements</span> <span class="token class-name">InvoicePersistence</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token class-name">Invoice</span> invoice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Save to DB</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FilePersistence</span> <span class="token keyword">implements</span> <span class="token class-name">InvoicePersistence</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token class-name">Invoice</span> invoice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Save to file</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>So our class structure now looks like this:</p>
+<h2 align="center">
+  <img src="https://erinc.io/wp-content/uploads/2020/08/SOLID-Tutorial-1-1024x554.jpeg" width="600px" />
+  <br>
+</h2>
+<p>Now our persistence logic is easily extendable. If our boss asks us to add another database and have 2 different types of databases like MySQL and MongoDB, we can easily do that.</p>
+<p>You may think that we could just create multiple classes without an interface and add a save method to all of them.</p>
+<p>But let's say that we extend our app and have multiple persistence classes like InvoicePersistence, BookPersistence and we create a PersistenceManager class that manages all persistence classes:</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersistenceManager</span> <span class="token punctuation">{</span>
+    <span class="token class-name">InvoicePersistence</span> invoicePersistence<span class="token punctuation">;</span>
+    <span class="token class-name">BookPersistence</span> bookPersistence<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">PersistenceManager</span><span class="token punctuation">(</span><span class="token class-name">InvoicePersistence</span> invoicePersistence<span class="token punctuation">,</span>
+                              <span class="token class-name">BookPersistence</span> bookPersistence<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>invoicePersistence <span class="token operator">=</span> invoicePersistence<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>bookPersistence <span class="token operator">=</span> bookPersistence<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We can now pass any class that implements the InvoicePersistence interface to this class with the help of polymorphism. This is the flexibility that interfaces provide.</p>
+<h2 id="liskov-substitution-principle"><a href="#liskov-substitution-principle" aria-hidden="true"><span class="icon icon-link"></span></a>Liskov Substitution Principle</h2>
+<p>The Liskov Substitution Principle states that subclasses should be substitutable for their base classes.</p>
+<p>This means that, given that class B is a subclass of class A, we should be able to pass an object of class B to any method that expects an object of class A and the method should not give any weird output in that case.</p>
+<p>This is the expected behavior, because when we use inheritance we assume that the child class inherits everything that the superclass has. The child class extends the behavior but never narrows it down.</p>
+<p>Therefore, when a class does not obey this principle, it leads to some nasty bugs that are hard to detect.</p>
+<p>Liskov's principle is easy to understand but hard to detect in code. So let's look at an example.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token punctuation">{</span>
+	<span class="token keyword">protected</span> <span class="token keyword">int</span> width<span class="token punctuation">,</span> height<span class="token punctuation">;</span>
+
+	<span class="token keyword">public</span> <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token keyword">int</span> width<span class="token punctuation">,</span> <span class="token keyword">int</span> height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token operator">=</span> width<span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>height <span class="token operator">=</span> height<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> width<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setWidth</span><span class="token punctuation">(</span><span class="token keyword">int</span> width<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token operator">=</span> width<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> height<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setHeight</span><span class="token punctuation">(</span><span class="token keyword">int</span> height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>height <span class="token operator">=</span> height<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> width <span class="token operator">*</span> height<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We have a simple Rectangle class, and a getArea function which returns the area of the rectangle.</p>
+<p>Now we decide to create another class for Squares. As you might know, a square is just a special type of rectangle where the width is equal to the height.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Square</span> <span class="token keyword">extends</span> <span class="token class-name">Rectangle</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token class-name">Square</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token class-name">Square</span><span class="token punctuation">(</span><span class="token keyword">int</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		width <span class="token operator">=</span> height <span class="token operator">=</span> size<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setWidth</span><span class="token punctuation">(</span><span class="token keyword">int</span> width<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">setWidth</span><span class="token punctuation">(</span>width<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">setHeight</span><span class="token punctuation">(</span>width<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setHeight</span><span class="token punctuation">(</span><span class="token keyword">int</span> height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">setHeight</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">setWidth</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Our Square class extends the Rectangle class. We set height and width to the same value in the constructor, but we do not want any client (someone who uses our class in their code) to change height or weight in a way that can violate the square property.</p>
+<p>Therefore we override the setters to set both properties whenever one of them is changed. But by doing that we have just violated the Liskov substitution principle.</p>
+<p>Let's create a main class to perform tests on the getArea function.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">getAreaTest</span><span class="token punctuation">(</span><span class="token class-name">Rectangle</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> width <span class="token operator">=</span> r<span class="token punctuation">.</span><span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      r<span class="token punctuation">.</span><span class="token function">setHeight</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Expected area of "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>width <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">", got "</span> <span class="token operator">+</span> r<span class="token punctuation">.</span><span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Rectangle</span> rc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">getAreaTest</span><span class="token punctuation">(</span>rc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token class-name">Rectangle</span> sq <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Square</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      sq<span class="token punctuation">.</span><span class="token function">setWidth</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">getAreaTest</span><span class="token punctuation">(</span>sq<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Your team's tester just came up with the testing function getAreaTest and tells you that your getArea function fails to pass the test for square objects.</p>
+<p>In the first test, we create a rectangle where the width is 2 and the height is 3 and call getAreaTest. The output is 20 as expected, but things go wrong when we pass in the square. This is because the call to setHeight function in the test is setting the width as well and results in an unexpected output.</p>
+<h2 id="interface-segregation-principle"><a href="#interface-segregation-principle" aria-hidden="true"><span class="icon icon-link"></span></a>Interface Segregation Principle</h2>
+<p>Segregation means keeping things separated, and the Interface Segregation Principle is about separating the interfaces.</p>
+<p>The principle states that many client-specific interfaces are better than one general-purpose interface. Clients should not be forced to implement a function they do no need.</p>
+<p>This is a simple principle to understand and apply, so let's see an example.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ParkingLot</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">void</span> <span class="token function">parkCar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// Decrease empty spot count by 1</span>
+	<span class="token keyword">void</span> <span class="token function">unparkCar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Increase empty spots by 1</span>
+	<span class="token keyword">void</span> <span class="token function">getCapacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// Returns car capacity</span>
+	<span class="token keyword">double</span> <span class="token function">calculateFee</span><span class="token punctuation">(</span><span class="token class-name">Car</span> car<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Returns the price based on number of hours</span>
+	<span class="token keyword">void</span> <span class="token function">doPayment</span><span class="token punctuation">(</span><span class="token class-name">Car</span> car<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span></code></pre>
+<p>We modeled a very simplified parking lot. It is the type of parking lot where you pay an hourly fee. Now consider that we want to implement a parking lot that is free.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FreeParking</span> <span class="token keyword">implements</span> <span class="token class-name">ParkingLot</span> <span class="token punctuation">{</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">parkCar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">unparkCar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getCapacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">calculateFee</span><span class="token punctuation">(</span><span class="token class-name">Car</span> car<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doPayment</span><span class="token punctuation">(</span><span class="token class-name">Car</span> car<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string">"Parking lot is free"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Our parking lot interface was composed of 2 things: Parking related logic (park car, unpark car, get capacity) and payment related logic.</p>
+<p>But it is too specific. Because of that, our FreeParking class was forced to implement payment-related methods that are irrelevant. Let's separate or segregate the interfaces.</p>
+<h2 align="center">
+  <img src="https://erinc.io/wp-content/uploads/2020/08/SOLID-Tutorial-1024x432.png" width="600px" />
+  <br>
+</h2>
+<p>We've now separated the parking lot. With this new model, we can even go further and split the PaidParkingLot to support different types of payment.</p>
+<p>Now our model is much more flexible, extendable, and the clients do not need to implement any irrelevant logic because we provide only parking-related functionality in the parking lot interface.</p>
+<h2 id="dependency-inversion-principle"><a href="#dependency-inversion-principle" aria-hidden="true"><span class="icon icon-link"></span></a>Dependency Inversion Principle</h2>
+<p>The Dependency Inversion principle states that our classes should depend upon interfaces or abstract classes instead of concrete classes and functions.</p>
+<p>In his <a href="https://fi.ort.edu.uy/innovaportal/file/2032/1/design_principles.pdf" target="_blank" rel="nofollow noopener noreferrer">article</a> (2000), Uncle Bob summarizes this principle as follows:</p>
+<blockquote>
+<p>"If the OCP states the goal of OO architecture, the DIP states the primary mechanism".</p>
+</blockquote>
+<p>These two principles are indeed related and we have applied this pattern before while we were discussing the Open-Closed Principle.</p>
+<p>We want our classes to be open to extension, so we have reorganized our dependencies to depend on interfaces instead of concrete classes. Our PersistenceManager class depends on InvoicePersistence instead of the classes that implement that interface.</p>
+<h2 id="conclusion"><a href="#conclusion" aria-hidden="true"><span class="icon icon-link"></span></a>Conclusion</h2>
+<p>In this article, we started with the history of SOLID principles, and then we tried to acquire a clear understanding of the why's and how's of each principle. We even refactored a simple Invoice application to obey SOLID principles.</p>
+<p>I want to thank you for taking the time to read the whole article and I hope that the above concepts are clear.</p>
+<p>I suggest keeping these principles in mind while designing, writing, and refactoring your code so that your code will be much more clean, extendable, and testable.</p>
+<p><a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/" target="_blank" rel="nofollow noopener noreferrer">Source</a></p>
+</p></div><div data-v-85c60060><img src="https://armanabkar.ir/profile-pic.png" alt="Arman Abkar" data-v-85c60060><p data-v-85c60060>
+    Hi, I'm
+    <strong data-v-85c60060>Arman Abkar</strong>, a Software Developer from Los Angeles,
+    California. You can follow me on
+    <a href="https://twitter.com/armanabkar" target="_blank" data-v-85c60060>Twitter</a>
+    or
+    <a href="https://www.instagram.com/armanabkar/" target="_blank" data-v-85c60060>Instagram</a>, see some of my work on
+    <a href="https://github.com/armanabkar" target="_blank" data-v-85c60060>GitHub</a>, or
+    read more about me on
+    <a href="https://www.linkedin.com/in/armanabkar/" target="_blank" data-v-85c60060>LinkedIn</a>. <br data-v-85c60060>
+    Please feel free to reach me at
+    <a href="mailto: armanabkar@gmail.com" data-v-85c60060>armanabkar@gmail.com</a>.
+  </p></div><div class="footer"><p>
+      Built with
+      <a href="//gridsome.org" class="link">Gridsome</a>
+      &amp; Made with ❤️ by
+      <a href="https://armanabkar.ir/" class="link">Arman Abkar</a></p></div></main> <script src="/gridsome-minimal-blog/assets/js/app.9c97b313.js" defer></script><script src="/gridsome-minimal-blog/assets/js/page--src--templates--post-vue.c309d0ab.js" defer></script>
+  </body>
+</html>
