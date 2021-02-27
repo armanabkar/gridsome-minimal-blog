@@ -47,13 +47,20 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  border-top: 0.7rem solid var(--border-color);
-  border-bottom: 0.7rem solid var(--border-color);
-  border-left: 0.7rem solid var(--border-color);
+  border-top: 0.6rem solid var(--border-color);
+  border-bottom: 0.6rem solid var(--border-color);
+  border-left: 0.6rem solid var(--border-color);
   min-height: 100vh;
   background-color: var(--bkg-color);
   color: var(--text-color);
   transition: background 0.3s;
+  scrollbar-color: var(--border-color) var(--bkg-color);
+}
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    border: 0.5rem solid var(--border-color);
+  }
 }
 
 .layout {
@@ -111,7 +118,7 @@ img {
 }
 
 ::-webkit-scrollbar {
-  width: 0.7rem; /* width of the entire scrollbar */
+  width: 0.6rem; /* width of the entire scrollbar */
   overflow: auto;
 }
 
@@ -121,5 +128,15 @@ img {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--border-color); /* color of the scroll thumb */
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    border: 0.4rem solid var(--border-color);
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 </style>

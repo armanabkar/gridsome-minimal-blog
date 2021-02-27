@@ -62,4 +62,20 @@ query {
   font-weight: 200;
   font-size: 35px;
 }
+
+@media only screen and (max-width: 992px) {
+  .header {
+    font-family: "Stylish";
+    font-size: 2.1em;
+    text-align: center;
+    line-height: 2em;
+    padding: 0.15em;
+  }
+
+  .header h2 {
+    font-weight: 200;
+    font-size: 0.9em;
+    line-height: 1.5em;
+  }
+}
 </style>

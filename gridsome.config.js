@@ -7,6 +7,8 @@
 module.exports = {
   siteName: "Gridsome Blog",
   siteDescription: "A simple blog designed with Gridsome",
+  siteUrl: "https://armanabkar.github.io",
+  pathPrefix: "/gridsome-minimal-blog",
   templates: {
     Post: "/blog/:title",
   },
