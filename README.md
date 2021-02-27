@@ -4,7 +4,12 @@
 
 ## Preview
 
-![preview](https://res.cloudinary.com/lauragift/image/upload/v1558648720/gridsome-minimal-blog_qqm49s.png)
+### [Live Demo](https://armanabkar.github.io/gridsome-minimal-blog/)
+
+<h2 align="center">
+  <img src="./screenshots.gif" alt="gridsome-minimal-blog" width="600px" />
+  <br>
+</h2>
 
 ## Installation
 
