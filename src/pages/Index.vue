@@ -6,19 +6,25 @@
     </header>
     <section class="posts">
       <PostList
-        v-for="edge in $page.allPost.edges"
+        v-for="edge in $page.posts.edges"
         :key="edge.node.id"
         :post="edge.node"
       />
     </section>
+    <Pagination
+      :info="$page.posts.pageInfo"
+      v-if="$page.posts.pageInfo.totalPages > 1"
+    />
   </Layout>
 </template>
 
 <script>
 import PostList from "@/components/PostList"
+import Pagination from "@/components/Pagination"
 export default {
   components: {
     PostList,
+    Pagination,
   },
   metaInfo: {
     title: "Gridsome Blog",
@@ -27,13 +33,19 @@ export default {
 </script>
 
 <page-query>
-query {
+query ($page: Int) {
   metadata {
     siteName
     siteDescription
   }
-  allPost {
+  posts: allPost(perPage: 3, page: $page) @paginate {
     totalCount
+    pageInfo { 
+      totalPages 
+      currentPage 
+      isFirst 
+      isLast 
+      } 
     edges {
       node {
         id
