@@ -23,3 +23,15 @@
 2. `cd my-blog` to open the folder
 3. `gridsome develop` to start a local dev server at `http://localhost:8080`
 4. Happy coding 🎉🙌
+
+## Build (& Deploy)
+
+1. `npm run build` to build the project and output it to /dist folder.
+2. optional: `npm run deploy` to deploy it to GitHub Pages, you should also configure gridsome.config.js file:
+
+```js
+{
+  siteUrl: "https://armanabkar.github.io",
+  pathPrefix: "/gridsome-minimal-blog",
+}
+```
