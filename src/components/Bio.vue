@@ -1,22 +1,20 @@
 <template>
   <div>
-    <img src="https://armanabkar.ir/profile-pic.png" alt="Arman Abkar" />
+    <img
+      src="https://qwizzeria.com/wp-content/uploads/2017/09/Lorem-ipsum.png"
+      alt="Lorem Ipsum"
+    />
     <p>
       Hi, I'm
-      <strong>Arman Abkar</strong>, a Software Developer from Los Angeles,
-      California. You can follow me on
-      <a href="https://twitter.com/armanabkar" target="_blank">Twitter</a>
+      <strong>Lorem Ipsum</strong>, a Software Developer from Earth, Milky Way.
+      You can follow me on
+      <a href="/#" target="_blank">Twitter</a>
       or
-      <a href="https://www.instagram.com/armanabkar/" target="_blank"
-        >Instagram</a
-      >, see some of my work on
-      <a href="https://github.com/armanabkar" target="_blank">GitHub</a>, or
-      read more about me on
-      <a href="https://www.linkedin.com/in/armanabkar/" target="_blank"
-        >LinkedIn</a
-      >. <br />
+      <a href="/#" target="_blank">Instagram</a>, see some of my work on
+      <a href="/#" target="_blank">GitHub</a>, or read more about me on
+      <a href="/#" target="_blank">LinkedIn</a>. <br />
       Please feel free to reach me at
-      <a href="mailto: armanabkar@gmail.com">armanabkar@gmail.com</a>.
+      <a href="/#">loremipsum@gmail.com</a>.
     </p>
   </div>
 </template>

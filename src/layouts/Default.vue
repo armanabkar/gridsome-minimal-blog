@@ -7,7 +7,7 @@
         Built with
         <a class="link" href="//gridsome.org">Gridsome</a>
         & Made with ❤️ by
-        <a class="link" href="https://armanabkar.ir/">Arman Abkar</a>
+        <a class="link" href="/#">Lorem Ipsum</a>
       </p>
     </div>
   </main>
