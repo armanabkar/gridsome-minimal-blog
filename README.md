@@ -1,15 +1,8 @@
 # Gridsome Minimal Blog
 
-> A blog starter theme for [Gridsome]() with a minimalistic design.
-
-## Preview
+A blog starter theme for [Gridsome]() with a minimalistic design.
 
 ### [Live Demo](https://armanabkar.github.io/gridsome-minimal-blog/)
-
-<h2 align="center">
-  <img src="./screenshots.gif" alt="gridsome-minimal-blog" width="600px" />
-  <br>
-</h2>
 
 ## Installation
 
